@@ -1,0 +1,16 @@
+{
+  "robusta": {
+    "price": null,
+    "currency": "USD",
+    "unit": "metric ton",
+    "contract": "London Robusta",
+    "source": "Pending connection",
+    "updated": null
+  },
+  "fx": {
+    "usd_ugx": null,
+    "source": "Pending connection",
+    "updated": null
+  },
+  "status": "waiting_for_live_data"
+}
