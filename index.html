@@ -3,174 +3,198 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Pasha Coffee Intelligence</title>
 
 <style>
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
 }
 
-body {
-  font-family: Arial, sans-serif;
-  background: #0b1220;
-  color: #f5f7fa;
+body{
+  font-family:Arial,sans-serif;
+  background:#07111f;
+  color:#f5f7fa;
+  line-height:1.5;
 }
 
-header {
-  background: #111b2e;
-  padding: 20px;
-  border-bottom: 1px solid #26344d;
+header{
+  background:#101d30;
+  padding:28px 20px;
+  border-bottom:1px solid #263752;
 }
 
-.logo {
-  font-size: 25px;
-  font-weight: bold;
+.logo{
+  font-size:28px;
+  font-weight:800;
 }
 
-.subtitle {
-  color: #9ca9bd;
-  margin-top: 6px;
-  font-size: 14px;
+.subtitle{
+  color:#aab7c9;
+  margin-top:8px;
 }
 
-.container {
-  padding: 18px;
-  max-width: 1200px;
-  margin: auto;
+nav{
+  display:flex;
+  gap:8px;
+  overflow-x:auto;
+  padding:12px 15px;
+  background:#0c1727;
+  position:sticky;
+  top:0;
+  z-index:10;
 }
 
-.section-title {
-  margin: 25px 0 12px;
-  font-size: 20px;
+nav button{
+  border:1px solid #31435f;
+  background:#142238;
+  color:white;
+  padding:10px 14px;
+  border-radius:8px;
+  white-space:nowrap;
 }
 
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 12px;
+nav button:hover{
+  background:#213552;
 }
 
-.card {
-  background: #121e32;
-  border: 1px solid #26344d;
-  border-radius: 12px;
-  padding: 17px;
+.container{
+  max-width:1200px;
+  margin:auto;
+  padding:20px;
 }
 
-.card-title {
-  color: #9ca9bd;
-  font-size: 13px;
-  margin-bottom: 10px;
+h2{
+  margin:28px 0 15px;
 }
 
-.value {
-  font-size: 24px;
-  font-weight: bold;
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
+  gap:15px;
 }
 
-.green {
-  color: #36d399;
+.card{
+  background:#122138;
+  border:1px solid #273b58;
+  border-radius:14px;
+  padding:20px;
 }
 
-.red {
-  color: #ff6b6b;
+.card h3{
+  color:#aebbd0;
+  font-size:15px;
+  font-weight:500;
 }
 
-.yellow {
-  color: #ffd166;
+.value{
+  font-size:28px;
+  font-weight:800;
+  margin:8px 0;
 }
 
-.chart {
-  height: 250px;
-  background: #121e32;
-  border: 1px solid #26344d;
-  border-radius: 12px;
-  padding: 15px;
-  margin-top: 12px;
+.green{
+  color:#35d49a;
 }
 
-.bars {
-  height: 180px;
-  display: flex;
-  align-items: end;
-  gap: 8px;
-  padding-top: 20px;
+.red{
+  color:#ff6b6b;
 }
 
-.bar {
-  flex: 1;
-  background: #36d399;
-  border-radius: 5px 5px 0 0;
+.yellow{
+  color:#ffd166;
 }
 
-.labels {
-  display: flex;
-  justify-content: space-between;
-  color: #8290a5;
-  font-size: 11px;
-  margin-top: 7px;
+.muted{
+  color:#94a3b8;
 }
 
-.factor {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px;
-  background: #121e32;
-  border: 1px solid #26344d;
-  border-radius: 10px;
-  margin-bottom: 10px;
+.section{
+  margin-top:30px;
 }
 
-.badge {
-  padding: 6px 10px;
-  border-radius: 20px;
-  font-size: 12px;
-  font-weight: bold;
+table{
+  width:100%;
+  border-collapse:collapse;
+  min-width:650px;
 }
 
-.bullish {
-  background: #123c31;
-  color: #36d399;
+.table-wrap{
+  overflow-x:auto;
 }
 
-.bearish {
-  background: #42252a;
-  color: #ff6b6b;
+th,td{
+  padding:13px;
+  border-bottom:1px solid #293a52;
+  text-align:left;
 }
 
-.neutral {
-  background: #40391f;
-  color: #ffd166;
+th{
+  color:#aebbd0;
+  background:#17263c;
 }
 
-.country {
-  background: #121e32;
-  border: 1px solid #26344d;
-  border-radius: 10px;
-  padding: 15px;
-  margin-bottom: 10px;
+.country{
+  font-weight:bold;
 }
 
-.country-header {
-  display: flex;
-  justify-content: space-between;
-  font-weight: bold;
+.signal{
+  font-weight:bold;
 }
 
-.small {
-  color: #9ca9bd;
-  font-size: 13px;
-  margin-top: 7px;
+.bar-chart{
+  height:240px;
+  display:flex;
+  align-items:flex-end;
+  gap:10px;
+  padding:20px 5px 0;
 }
 
-footer {
-  text-align: center;
-  color: #66758c;
-  padding: 30px 10px;
-  font-size: 12px;
+.bar{
+  flex:1;
+  background:#35d49a;
+  border-radius:7px 7px 0 0;
+  min-width:20px;
+}
+
+.bar:nth-child(1){height:40%}
+.bar:nth-child(2){height:52%}
+.bar:nth-child(3){height:46%}
+.bar:nth-child(4){height:65%}
+.bar:nth-child(5){height:57%}
+.bar:nth-child(6){height:74%}
+.bar:nth-child(7){height:68%}
+.bar:nth-child(8){height:82%}
+.bar:nth-child(9){height:72%}
+.bar:nth-child(10){height:91%}
+
+.filters{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+select,input{
+  background:#101d30;
+  color:white;
+  border:1px solid #334761;
+  padding:12px;
+  border-radius:8px;
+}
+
+.news{
+  border-left:4px solid #35d49a;
+  margin-bottom:12px;
+}
+
+footer{
+  margin-top:50px;
+  padding:30px 20px;
+  background:#0c1727;
+  color:#8fa0b7;
+  text-align:center;
 }
 </style>
 </head>
@@ -180,173 +204,545 @@ footer {
 <header>
   <div class="logo">☕ PASHA COFFEE INTELLIGENCE</div>
   <div class="subtitle">
-    Robusta market intelligence • Supply • Stocks • Shipments • FX • Weather
+    Global Robusta market intelligence • Supply • Stocks • Shipments • Exporters • FX • Weather • Demand
   </div>
 </header>
 
-<div class="container">
+<nav>
+  <button onclick="showSection('overview')">Overview</button>
+  <button onclick="showSection('prices')">Prices</button>
+  <button onclick="showSection('supply')">Global Supply</button>
+  <button onclick="showSection('stocks')">Stocks</button>
+  <button onclick="showSection('exporters')">Exporters</button>
+  <button onclick="showSection('shipments')">Shipments</button>
+  <button onclick="showSection('fx')">FX</button>
+  <button onclick="showSection('weather')">Weather</button>
+  <button onclick="showSection('forces')">Bullish/Bearish</button>
+</nav>
 
-  <h2 class="section-title">Market Overview</h2>
+<main class="container">
 
-  <div class="cards">
+<section id="overview">
 
-    <div class="card">
-      <div class="card-title">London Robusta</div>
-      <div class="value">—</div>
-      <div class="small">Live price coming soon</div>
-    </div>
+<h2>Market Overview</h2>
 
-    <div class="card">
-      <div class="card-title">USD / UGX</div>
-      <div class="value">—</div>
-      <div class="small">Live FX coming soon</div>
-    </div>
+<div class="grid">
 
-    <div class="card">
-      <div class="card-title">Market Signal</div>
-      <div class="value yellow">WATCH</div>
-      <div class="small">Awaiting live data</div>
-    </div>
+<div class="card">
+<h3>London Robusta</h3>
+<div class="value">—</div>
+<div class="muted">Live market connection</div>
+</div>
 
-    <div class="card">
-      <div class="card-title">Data Status</div>
-      <div class="value green">ONLINE</div>
-      <div class="small">Dashboard active</div>
-    </div>
+<div class="card">
+<h3>USD / UGX</h3>
+<div class="value">—</div>
+<div class="muted">Live FX connection</div>
+</div>
 
-  </div>
+<div class="card">
+<h3>Market Signal</h3>
+<div class="value yellow">WATCH</div>
+<div class="muted">Waiting for live data</div>
+</div>
 
-  <h2 class="section-title">London Robusta Price</h2>
-
-  <div class="chart">
-
-    <div class="small">
-      Historical price chart — live market connection will be added
-    </div>
-
-    <div class="bars">
-      <div class="bar" style="height:45%"></div>
-      <div class="bar" style="height:52%"></div>
-      <div class="bar" style="height:48%"></div>
-      <div class="bar" style="height:63%"></div>
-      <div class="bar" style="height:58%"></div>
-      <div class="bar" style="height:72%"></div>
-      <div class="bar" style="height:67%"></div>
-      <div class="bar" style="height:80%"></div>
-      <div class="bar" style="height:74%"></div>
-      <div class="bar" style="height:88%"></div>
-    </div>
-
-    <div class="labels">
-      <span>Day 1</span>
-      <span>Day 5</span>
-      <span>Day 10</span>
-    </div>
-
-  </div>
-
-  <h2 class="section-title">Bullish & Bearish Forces</h2>
-
-  <div class="factor">
-    <div>
-      <strong>Global Robusta Stocks</strong>
-      <div class="small">Low stocks can increase price pressure.</div>
-    </div>
-    <span class="badge bullish">BULLISH</span>
-  </div>
-
-  <div class="factor">
-    <div>
-      <strong>Exporter Shipments</strong>
-      <div class="small">Heavy shipments can increase nearby supply.</div>
-    </div>
-    <span class="badge bearish">BEARISH</span>
-  </div>
-
-  <div class="factor">
-    <div>
-      <strong>USD Exchange Rate</strong>
-      <div class="small">FX movements affect local coffee values.</div>
-    </div>
-    <span class="badge neutral">WATCH</span>
-  </div>
-
-  <div class="factor">
-    <div>
-      <strong>Weather</strong>
-      <div class="small">Weather conditions affect production expectations.</div>
-    </div>
-    <span class="badge neutral">WATCH</span>
-  </div>
-
-  <h2 class="section-title">Coffee Origin Monitor</h2>
-
-  <div class="country">
-    <div class="country-header">
-      <span>🇺🇬 Uganda</span>
-      <span class="yellow">WATCH</span>
-    </div>
-    <div class="small">
-      Production • exports • stocks • exporter shipments
-    </div>
-  </div>
-
-  <div class="country">
-    <div class="country-header">
-      <span>🇻🇳 Vietnam</span>
-      <span class="yellow">WATCH</span>
-    </div>
-    <div class="small">
-      Robusta production • weather • exports
-    </div>
-  </div>
-
-  <div class="country">
-    <div class="country-header">
-      <span>🇧🇷 Brazil</span>
-      <span class="yellow">WATCH</span>
-    </div>
-    <div class="small">
-      Conilon production • weather • exports
-    </div>
-  </div>
-
-  <div class="country">
-    <div class="country-header">
-      <span>🇮🇩 Indonesia</span>
-      <span class="yellow">WATCH</span>
-    </div>
-    <div class="small">
-      Production • exports • weather
-    </div>
-  </div>
-
-  <h2 class="section-title">Pasha Intelligence</h2>
-
-  <div class="card">
-    <div class="card-title">MARKET EXPLANATION</div>
-
-    <p style="line-height:1.6;">
-      Pasha will combine futures prices, exchange rates,
-      coffee stocks, export shipments, production expectations,
-      weather and demand information to explain why the
-      Robusta market is moving.
-    </p>
-
-    <br>
-
-    <p class="small">
-      Example:
-      “Prices increased because supply expectations tightened
-      while export availability decreased.”
-    </p>
-  </div>
+<div class="card">
+<h3>Data Status</h3>
+<div class="value green">ONLINE</div>
+<div class="muted">Platform active</div>
+</div>
 
 </div>
 
+<h2>London Robusta Price History</h2>
+
+<div class="card">
+
+<div class="bar-chart">
+<div class="bar"></div>
+<div class="bar"></div>
+<div class="bar"></div>
+<div class="bar"></div>
+<div class="bar"></div>
+<div class="bar"></div>
+<div class="bar"></div>
+<div class="bar"></div>
+<div class="bar"></div>
+<div class="bar"></div>
+</div>
+
+<div class="grid">
+<div class="muted">Day 1</div>
+<div class="muted">Day 5</div>
+<div class="muted">Day 10</div>
+</div>
+
+</div>
+
+</section>
+
+
+<section id="prices" class="section">
+
+<h2>London Robusta Market</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>Current Contract</h3>
+<div class="value">—</div>
+<p class="muted">Live price to be connected</p>
+</div>
+
+<div class="card">
+<h3>Daily Change</h3>
+<div class="value">—</div>
+<p class="muted">Waiting for market feed</p>
+</div>
+
+<div class="card">
+<h3>Weekly Direction</h3>
+<div class="value yellow">WATCH</div>
+<p class="muted">Analysis engine</p>
+</div>
+
+</div>
+
+</section>
+
+
+<section id="supply" class="section">
+
+<h2>Global Robusta Supply</h2>
+
+<div class="card">
+<p class="muted">
+The platform will monitor production, crop expectations, exports,
+weather, inventories and supply disruptions from major Robusta origins.
+</p>
+</div>
+
+<br>
+
+<div class="table-wrap">
+<table>
+<tr>
+<th>Country</th>
+<th>Role</th>
+<th>Crop Outlook</th>
+<th>Supply Signal</th>
+</tr>
+
+<tr>
+<td class="country">Vietnam</td>
+<td>Major Robusta origin</td>
+<td>Monitoring</td>
+<td class="signal yellow">WATCH</td>
+</tr>
+
+<tr>
+<td class="country">Brazil</td>
+<td>Major producer</td>
+<td>Monitoring</td>
+<td class="signal yellow">WATCH</td>
+</tr>
+
+<tr>
+<td class="country">Indonesia</td>
+<td>Major Robusta origin</td>
+<td>Monitoring</td>
+<td class="signal yellow">WATCH</td>
+</tr>
+
+<tr>
+<td class="country">Uganda</td>
+<td>Major African origin</td>
+<td>Monitoring</td>
+<td class="signal yellow">WATCH</td>
+</tr>
+
+<tr>
+<td class="country">India</td>
+<td>Robusta producer</td>
+<td>Monitoring</td>
+<td class="signal yellow">WATCH</td>
+</tr>
+
+</table>
+</div>
+
+</section>
+
+
+<section id="stocks" class="section">
+
+<h2>Global Coffee Stocks</h2>
+
+<div class="card">
+
+<div class="filters">
+<select>
+<option>All countries</option>
+<option>Vietnam</option>
+<option>Brazil</option>
+<option>Indonesia</option>
+<option>Uganda</option>
+<option>India</option>
+</select>
+
+<select>
+<option>All stock types</option>
+<option>Certified stocks</option>
+<option>Commercial stocks</option>
+<option>Warehouse stocks</option>
+</select>
+</div>
+
+<br>
+
+<div class="table-wrap">
+<table>
+
+<tr>
+<th>Market</th>
+<th>Stock Type</th>
+<th>Current Level</th>
+<th>Direction</th>
+</tr>
+
+<tr>
+<td>London</td>
+<td>Certified</td>
+<td>Live data pending</td>
+<td class="yellow">WATCH</td>
+</tr>
+
+<tr>
+<td>Vietnam</td>
+<td>Commercial</td>
+<td>Live data pending</td>
+<td class="yellow">WATCH</td>
+</tr>
+
+<tr>
+<td>Brazil</td>
+<td>Commercial</td>
+<td>Live data pending</td>
+<td class="yellow">WATCH</td>
+</tr>
+
+</table>
+</div>
+
+</div>
+
+</section>
+
+
+<section id="exporters" class="section">
+
+<h2>Global Coffee Exporters</h2>
+
+<div class="card">
+<p class="muted">
+Clicking a country will eventually open detailed exporter intelligence,
+including companies, shipment expectations, volumes and destination markets.
+</p>
+</div>
+
+<br>
+
+<div class="table-wrap">
+<table>
+
+<tr>
+<th>Country</th>
+<th>Example Exporters</th>
+<th>Export Status</th>
+<th>Market Effect</th>
+</tr>
+
+<tr>
+<td>Vietnam</td>
+<td>Major Vietnamese exporters</td>
+<td>Monitoring</td>
+<td class="yellow">WATCH</td>
+</tr>
+
+<tr>
+<td>Brazil</td>
+<td>Major Brazilian exporters</td>
+<td>Monitoring</td>
+<td class="yellow">WATCH</td>
+</tr>
+
+<tr>
+<td>Indonesia</td>
+<td>Major Indonesian exporters</td>
+<td>Monitoring</td>
+<td class="yellow">WATCH</td>
+</tr>
+
+<tr>
+<td>Uganda</td>
+<td>Major Ugandan exporters</td>
+<td>Monitoring</td>
+<td class="yellow">WATCH</td>
+</tr>
+
+<tr>
+<td>India</td>
+<td>Major Indian exporters</td>
+<td>Monitoring</td>
+<td class="yellow">WATCH</td>
+</tr>
+
+<tr>
+<td>Tanzania</td>
+<td>Major Tanzanian exporters</td>
+<td>Monitoring</td>
+<td class="yellow">WATCH</td>
+</tr>
+
+<tr>
+<td>Ivory Coast</td>
+<td>Major Ivorian exporters</td>
+<td>Monitoring</td>
+<td class="yellow">WATCH</td>
+</tr>
+
+<tr>
+<td>Cameroon</td>
+<td>Major Cameroonian exporters</td>
+<td>Monitoring</td>
+<td class="yellow">WATCH</td>
+</tr>
+
+</table>
+</div>
+
+</section>
+
+
+<section id="shipments" class="section">
+
+<h2>Shipments & Expected Shipments</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>Current Shipments</h3>
+<div class="value">—</div>
+<p class="muted">Global shipment data</p>
+</div>
+
+<div class="card">
+<h3>Expected Shipments</h3>
+<div class="value">—</div>
+<p class="muted">Upcoming export flow</p>
+</div>
+
+<div class="card">
+<h3>Shipment Pressure</h3>
+<div class="value yellow">WATCH</div>
+<p class="muted">Supply-flow analysis</p>
+</div>
+
+</div>
+
+<br>
+
+<div class="card news">
+<strong>Shipment intelligence</strong>
+<p class="muted">
+The future system will track exporter shipment dates, expected volumes,
+destination countries and changes in export flow.
+</p>
+</div>
+
+</section>
+
+
+<section id="fx" class="section">
+
+<h2>Foreign Exchange</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>USD / UGX</h3>
+<div class="value">—</div>
+<p class="muted">Live rate pending</p>
+</div>
+
+<div class="card">
+<h3>USD / BRL</h3>
+<div class="value">—</div>
+<p class="muted">Live rate pending</p>
+</div>
+
+<div class="card">
+<h3>USD / VND</h3>
+<div class="value">—</div>
+<p class="muted">Live rate pending</p>
+</div>
+
+<div class="card">
+<h3>USD / IDR</h3>
+<div class="value">—</div>
+<p class="muted">Live rate pending</p>
+</div>
+
+</div>
+
+</section>
+
+
+<section id="weather" class="section">
+
+<h2>Weather & Crop Conditions</h2>
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+<th>Origin</th>
+<th>Weather</th>
+<th>Crop Risk</th>
+<th>Market Effect</th>
+</tr>
+
+<tr>
+<td>Vietnam</td>
+<td>Monitoring</td>
+<td>—</td>
+<td class="yellow">WATCH</td>
+</tr>
+
+<tr>
+<td>Brazil</td>
+<td>Monitoring</td>
+<td>—</td>
+<td class="yellow">WATCH</td>
+</tr>
+
+<tr>
+<td>Indonesia</td>
+<td>Monitoring</td>
+<td>—</td>
+<td class="yellow">WATCH</td>
+</tr>
+
+<tr>
+<td>Uganda</td>
+<td>Monitoring</td>
+<td>—</td>
+<td class="yellow">WATCH</td>
+</tr>
+
+</table>
+
+</div>
+
+</section>
+
+
+<section id="forces" class="section">
+
+<h2>Bullish & Bearish Market Forces</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3 class="green">🟢 Potential Bullish Forces</h3>
+
+<br>
+
+<p>• Falling global stocks</p>
+<p>• Weather damage to crops</p>
+<p>• Export delays</p>
+<p>• Strong demand</p>
+<p>• Lower producer selling</p>
+<p>• Currency movements supporting producer prices</p>
+
+</div>
+
+<div class="card">
+<h3 class="red">🔴 Potential Bearish Forces</h3>
+
+<br>
+
+<p>• Rising global stocks</p>
+<p>• Strong harvests</p>
+<p>• Heavy exporter selling</p>
+<p>• Weak demand</p>
+<p>• Faster shipments</p>
+<p>• Currency movements encouraging exports</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section class="section">
+
+<h2>Market Intelligence Engine</h2>
+
+<div class="card">
+
+<p>
+The platform will combine:
+</p>
+
+<br>
+
+<p>📈 London Robusta prices</p>
+<p>📦 Global production</p>
+<p>🏢 Exporter activity</p>
+<p>🚢 Shipments</p>
+<p>🏭 Stocks</p>
+<p>💵 Foreign exchange</p>
+<p>🌦️ Weather</p>
+<p>☕ Demand</p>
+
+<br>
+
+<p class="green">
+These factors will eventually be combined to produce a transparent
+bullish / bearish market signal.
+</p>
+
+</div>
+
+</section>
+
+</main>
+
+
 <footer>
-  Pasha Coffee Intelligence © 2026
+Pasha Coffee Intelligence<br>
+Global Coffee Market Intelligence Platform
 </footer>
 
+
+<script>
+
+function showSection(id){
+
+  const section=document.getElementById(id);
+
+  if(section){
+    section.scrollIntoView({
+      behavior:"smooth"
+    });
+  }
+
+}
+
+</script>
+
 </body>
-    </html>
+</html>
