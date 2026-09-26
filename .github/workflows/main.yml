@@ -1,8 +1,26 @@
-        - name: Update market data
-          run: python scripts/update_market.py
+name: Update Coffee Market Data
 
-        - name: Commit changes
-         run: |
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 * * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  update-market-data:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Update market data
+        run: python scripts/update_market.py
+
+      - name: Commit changes
+        run: |
           git config user.name "Pasha Coffee Intelligence"
           git config user.email "actions@github.com"
           git add data/market.json
