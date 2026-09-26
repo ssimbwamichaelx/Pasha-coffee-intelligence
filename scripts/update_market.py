@@ -6,6 +6,7 @@ url = "https://allratestoday.com/api/open/central-bank/bou?source=USD&target=UGX
 
 with urllib.request.urlopen(url, timeout=20) as response:
     exchange = json.load(response)
+        print(response.read().decode())
 
 data = {
     "updated_at": datetime.now(timezone.utc).isoformat(),
