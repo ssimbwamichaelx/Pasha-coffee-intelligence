@@ -8,9 +8,9 @@
     "updated": null
   },
   "fx": {
-    "usd_ugx": null,
-    "source": "Pending connection",
-    "updated": null
+    "usd_ugx": 3917.86,
+    "source": "Bank of Uganda",
+    "updated": "2026-09-26T13:00:06.110822+00:00"
   },
-  "status": "waiting_for_live_data"
+  "status": "live_data"
 }
