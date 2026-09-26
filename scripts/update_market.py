@@ -2,7 +2,7 @@ import json
 import urllib.request
 from datetime import datetime, timezone
 
-url = "https://api.frankfurter.dev/v2/rate/usd/ugx"
+url = "https://allratestoday.com/api/open/central-bank/bou?source=USD&target=UGX"
 
 with urllib.request.urlopen(url, timeout=20) as response:
     exchange = json.load(response)
@@ -10,7 +10,7 @@ with urllib.request.urlopen(url, timeout=20) as response:
 data = {
     "updated_at": datetime.now(timezone.utc).isoformat(),
     "usd_ugx": exchange["rate"],
-    "currency_source": "Frankfurter API"
+    "currency_source": "Bank of Uganda"
 }
 
 with open("data/market.json", "w") as f:
