@@ -12,13 +12,22 @@ with urllib.request.urlopen(url, timeout=20) as response:
 rate = exchange.get("rate")
 
 if rate is None:
-    raise ValueError("USD/UGX rate was not found in API response")
+    raise ValueError("USD/UGX rate was not found")
 
-data = {
-    "updated_at": datetime.now(timezone.utc).isoformat(),
-    "usd_ugx": rate,
-    "currency_source": "Bank of Uganda"
-}
+try:
+    with open("data/market.json", "r") as f:
+        data = json.load(f)
+except FileNotFoundError:
+    data = {}
+
+if "fx" not in data:
+    data["fx"] = {}
+
+data["fx"]["usd_ugx"] = rate
+data["fx"]["source"] = "Bank of Uganda"
+data["fx"]["updated"] = datetime.now(timezone.utc).isoformat()
+
+data["status"] = "live_data"
 
 with open("data/market.json", "w") as f:
     json.dump(data, f, indent=2)
