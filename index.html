@@ -754,15 +754,13 @@ async function loadMarketData() {
 
     const data = await response.json();
 
+    // USD / UGX
+    if (data.fx && data.fx.usd_ugx !== null) {
+      document.getElementById("usd-ugx").textContent =
+        Number(data.fx.usd_ugx).toLocaleString();
+    }
+
     console.log("PASHA market data loaded:", data);
-
-    if (data.fx && data.fx.usd_ugx) {
-      console.log("USD/UGX:", data.fx.usd_ugx);
-    }
-
-    if (data.robusta && data.robusta.price) {
-      console.log("London Robusta:", data.robusta.price);
-    }
 
   } catch (error) {
     console.error("PASHA data error:", error);
