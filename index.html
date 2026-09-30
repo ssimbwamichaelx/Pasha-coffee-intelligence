@@ -743,6 +743,33 @@ function showSection(id){
 }
 
 </script>
+<script>
+async function loadMarketData() {
+  try {
+    const response = await fetch("./data/market.json?time=" + Date.now());
 
+    if (!response.ok) {
+      throw new Error("Could not load market data");
+    }
+
+    const data = await response.json();
+
+    console.log("PASHA market data loaded:", data);
+
+    if (data.fx && data.fx.usd_ugx) {
+      console.log("USD/UGX:", data.fx.usd_ugx);
+    }
+
+    if (data.robusta && data.robusta.price) {
+      console.log("London Robusta:", data.robusta.price);
+    }
+
+  } catch (error) {
+    console.error("PASHA data error:", error);
+  }
+}
+
+loadMarketData();
+</script>
 </body>
 </html>
